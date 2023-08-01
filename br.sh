@@ -23,6 +23,7 @@ Path=/opt/brModelo
 Terminal=false
 StartupNotify=true
 Categories=Development;Education;
+EOF
 
 wget "https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/7.4.27/xampp-linux-x64-7.4.27-2-installer.run/download" -O xampp-installer.run && chmod +x xampp-installer.run && ./xampp-installer.run --mode unattended
 
@@ -38,12 +39,11 @@ WantedBy=multi-user.target
 EOF
 sudo systemctl enable xampp.service
 
-echo "CONCLUÍDO"
+echo "CONCLU�DO"
 
 echo "ALTERANDO A HTDOCS PARA LEITURA E ESCRITA TOTAL"
 
 #ALTERANDO A HTDOCS PARA LEITURA E ESCRITA TOTAL
 chmod -R 777 /opt/lampp/htdocs
 
-google-chrome
 '
