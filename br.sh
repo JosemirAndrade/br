@@ -45,4 +45,6 @@ echo "ALTERANDO A HTDOCS PARA LEITURA E ESCRITA TOTAL"
 #ALTERANDO A HTDOCS PARA LEITURA E ESCRITA TOTAL
 chmod -R 777 /opt/lampp/htdocs
 
+google-chrome  http://localhost/
+
 '
