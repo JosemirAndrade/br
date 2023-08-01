@@ -24,6 +24,25 @@ Terminal=false
 StartupNotify=true
 Categories=Development;Education;
 
-apt install google-chrome-stable -y
-apt install firefox firefox-locale-pt -y
+wget "https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/7.4.27/xampp-linux-x64-7.4.27-2-installer.run/download" -O xampp-installer.run && chmod +x xampp-installer.run && ./xampp-installer.run --mode unattended
+
+sudo tee /etc/systemd/system/xampp.service <<'EOF'
+[Unit]
+Description=XAMPP
+[Service]
+ExecStart=/opt/lampp/lampp start
+ExecStop=/opt/lampp/lampp stop
+Type=forking
+[Install]
+WantedBy=multi-user.target
+EOF
+sudo systemctl enable xampp.service
+
+echo "CONCLUÍDO"
+
+echo "ALTERANDO A HTDOCS PARA LEITURA E ESCRITA TOTAL"
+
+#ALTERANDO A HTDOCS PARA LEITURA E ESCRITA TOTAL
+chmod -R 777 /opt/lampp/htdocs
+
 '
